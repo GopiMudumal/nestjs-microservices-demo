@@ -1,5 +1,5 @@
 # Development stage
-FROM node:alpine AS development
+FROM node:23-alpine AS development
 
 WORKDIR /usr/src/app
 
@@ -18,8 +18,10 @@ COPY . .
 # Build the application
 RUN pnpm run build
 
+RUN ls -la ./dist
+
 # Production stage
-FROM node:alpine AS production
+FROM node:23-alpine AS production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
