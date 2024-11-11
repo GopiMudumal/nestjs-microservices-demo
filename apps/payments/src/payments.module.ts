@@ -11,7 +11,7 @@ import { LoggerModule } from '@app/common';
       isGlobal: true,
       envFilePath: './apps/payments/.env',
       validationSchema: Joi.object({
-        TCP_PORT: Joi.number().required(),
+        PORT: Joi.number().required(),
         STRIP_SECRET_KEY: Joi.string().required(),
       }),
     }),
